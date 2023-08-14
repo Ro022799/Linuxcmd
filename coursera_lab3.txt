@@ -1,0 +1,18 @@
+File permissions in Linux
+Project description
+Understanding the linux command line helps me automate daily tasks that could take a lot of time to complete. One of the best tools to learn was the command xargs, that helped me change permissions, move, remove, create, and write files with just one command line.
+Check file and directory details
+Ls -la 
+Describe the permissions string
+The first letter means if it is a directory or a regular file, the next 9 characters divide in three groups: user, group, others, each group could contain  w=write, r=read, x=execute, or - that means the group does not have any permission.
+Change file permissions
+Chmod u=+rwx, g=+rwx, o=rwx [file]
+Change file permissions on a hidden file
+Ls -al
+Chmod u=+rwx,g=+rwx, o=+rwx [hidden_file]
+Change directory permissions
+IWhen you display the files contained in a directory, if the first letter of the string contains a d instead of a - then is a directory, also is highlighted in blue:
+Chmod u=+rwx, g=-, o=- [directory]
+Summary
+Knowing linux commands improves and automate your daily tasks that coil involve a lot of time doing it manually
+
