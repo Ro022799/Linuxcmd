@@ -1,0 +1,6 @@
+1. CMD change group, other permissions' to write in all files that end with .txt
+  ls|grep .txt|xargs -t sudo chmod g+w,o+w
+2. CMD rm files on the directory that ends with .txt
+  ls|grep .txt|xargs -t rm
+3. Move files that ends with .txt to other directory
+  mv *.txt /[destiny_directory]
