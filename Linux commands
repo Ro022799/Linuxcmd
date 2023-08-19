@@ -4,7 +4,7 @@
   ls|grep .txt|xargs -t rm
 3. Move files that ends with .txt to other directory
   mv *.txt /[destiny_directory]
-4. Test all addresses of servers that are under a specific address
-  host -t ns [IP address]|egrep -o '(ns.*)'|xargs -t -I% host -t a %
+4. See all addresses of servers that are under a specific address
+  host -t ns [IP address]|egrep -o '(\s|\w.ns.*)'|xargs -t -I% host -t a %
   -I% : This means replace '%' with the ouptut 
   xargs -t : Option to see what is happening under the hood
