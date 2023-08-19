@@ -4,7 +4,14 @@
   ls|grep .txt|xargs -t rm
 3. Move files that ends with .txt to other directory
   mv *.txt /[destiny_directory]
-4. See all addresses of servers that are under a specific address
-  host -t ns [IP address]|egrep -o '(\s|\w.ns.*)'|xargs -t -I% host -t a %
-  -I% : This means replace '%' with the ouptut 
+4. See all IP addresses of servers that are under a specific address
+   host -t ns instagram.com|grep -Eo  '[a-d].ns..*| ns[0-9]{2}.*|'|xargs -t -I% host -t a %
+  Example "ns89.hostrazer.mx|a.ns.facebook.com"
+  The grep pattern:
+        [a-d] = Capture a letter between a and d
+        .* = Capture everything after ns.
+        | = OR command
+        [0-9]{2}= Capture a digit twice
+        .* = Capture everything after two digits
+  -I% : This means replace '%' with the ouptut of the grep command
   xargs -t : Option to see what is happening under the hood
